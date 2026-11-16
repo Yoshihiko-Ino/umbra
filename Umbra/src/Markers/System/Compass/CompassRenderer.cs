@@ -132,6 +132,8 @@ internal sealed class CompassRenderer(
     }
 
     // アイコンを毎フレーム取得しないようにキャッシュする
+    //      EN/英訳: 
+    //      Cache the icon(s) to prevent them from loading every frame.
     private readonly Dictionary<uint, IDalamudTextureWrap?> _iconCache    = [];
     private readonly HashSet<uint>                          _failedIconIds = [];
 

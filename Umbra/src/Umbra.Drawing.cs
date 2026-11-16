@@ -49,6 +49,8 @@ internal static class UmbraDrawing
     {
         foreach (var assembly in Framework.Assemblies) {
             // 大文字小文字を無視して一致するリソース名を検索し、見つかった実際の名前を使用する
+            //      EN/英訳: Search for case-insensitive value, then lookup the resulting case-sensitive 
+            //              value.
             var resource = assembly
                           .GetManifestResourceNames()
                           .FirstOrDefault(r => r.EndsWith(resourceName, StringComparison.OrdinalIgnoreCase));

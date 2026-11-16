@@ -57,6 +57,9 @@ internal class WorldMarkerNode : Node
     public void RemoveMarker(string id)
     {
         // ToList().IndexOf() を避け、Dictionary を直接走査して挿入順インデックスを取得
+        //      EN/英訳: 
+        //      Avoid using `ToList().IndexOf()`, instead perform a direct scan of the `Dictionary` to 
+        //      obtain the index based on insertion order
         int index = 0;
         bool found = false;
         foreach (var key in _markers.Keys) {
@@ -82,6 +85,8 @@ internal class WorldMarkerNode : Node
         if (!_markers.ContainsKey(marker.Key)) return false;
 
         // 既存の全マーカーが集約距離以内に収まっているかを確認
+        //      EN/英訳: 
+        //      Confirm that all existing markers are within the specified proximity range
         foreach (var existing in _markers.Values) {
             if (Vector3.Distance(existing.WorldPosition, marker.WorldPosition) > AggregateDistance) return false;
         }

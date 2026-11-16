@@ -36,6 +36,8 @@ internal sealed class WorldMarkerRegistry : IDisposable
         if (!_visibility.AreMarkersVisible()) return [];
 
         // TryGetValue でキー不在時の KeyNotFoundException を防ぐ
+        //      EN/英訳:
+        //      Prevent KeyNotFoundException when the key does not exist in TryGetValue
         return WorldMarkers.TryGetValue(_zoneManager.CurrentZone.Id, out var markers)
             ? [..markers.Values]
             : [];

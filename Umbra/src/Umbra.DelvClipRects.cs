@@ -70,6 +70,8 @@ public sealed class UmbraDelvClipRects : IDisposable
                 _clipRects.Remove(key);
             }
             // _clipRects と _managedRects を同期させる。再有効化時に古いエントリが残らないようにする
+            //      EN/英訳: Synchronize _clipRects and _managedRects. Avoid preserving outdated entries when 
+            //              re-enabling.
             _managedRects.Clear();
         }
     }
