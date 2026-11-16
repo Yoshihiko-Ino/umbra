@@ -57,6 +57,9 @@ internal class WorldMarkerNode : Node
     public void RemoveMarker(string id)
     {
         // ToList().IndexOf() を避け、Dictionary を直接走査して挿入順インデックスを取得
+        //      EN/英訳: 
+        //      Avoid using `ToList().IndexOf()`, instead perform a direct scan of the `Dictionary` to 
+        //      obtain the index based on insertion order
         int index = 0;
         bool found = false;
         foreach (var key in _markers.Keys) {
