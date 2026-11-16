@@ -85,8 +85,11 @@ internal class UmbraColors
 
     public static void UpdateCurrentProfile()
     {
-        // Stop() → Start() で1秒デバウンスをリセット。
-        // Enabled の二重設定は System.Timers.Timer のスレッド安全性を損なうため除去
+    // Stop() → Start() で1秒デバウンスをリセット。
+    //      EN/英訳: Reset the 1-second debounce by calling Stop() followed by Start().
+    // Enabled の二重設定は System.Timers.Timer のスレッド安全性を損なうため除
+    //      EN/英訳: Avoid setting “Enabled” twice, as this compromises the thread safety of
+    //              `System.Timers.Timer`.
         _debounceTimer!.Stop();
         _debounceTimer!.Start();
     }
