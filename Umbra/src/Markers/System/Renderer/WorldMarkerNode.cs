@@ -85,6 +85,8 @@ internal class WorldMarkerNode : Node
         if (!_markers.ContainsKey(marker.Key)) return false;
 
         // 既存の全マーカーが集約距離以内に収まっているかを確認
+        //      EN/英訳: 
+        //      Confirm that all existing markers are within the specified proximity range
         foreach (var existing in _markers.Values) {
             if (Vector3.Distance(existing.WorldPosition, marker.WorldPosition) > AggregateDistance) return false;
         }
