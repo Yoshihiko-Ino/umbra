@@ -21,6 +21,8 @@ internal class WorldMarkerRenderer : IDisposable
     private Dictionary<string, int>          MarkerAssignments { get; } = new();
 
     // フレームごとに使い捨てリストを new しないよう再利用
+    //      EN/英訳:
+    //      Reuse the list so you don't have to create a new one every frame
     private readonly List<string> _idsToRemove = [];
 
     public WorldMarkerRenderer(
