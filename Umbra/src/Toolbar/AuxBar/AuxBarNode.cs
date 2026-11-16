@@ -8,6 +8,8 @@ public class AuxBarNode : UdtNode
     private int  _width;
 
     // レイアウト関連の値が変わったときだけウィジェット走査を行うためのダーティフラグ
+    //      EN/英訳: 
+    //      A dirty flag used to trigger widget scanning only when layout-related values change
     private bool _layoutDirty = true;
 
     public AuxBarNode(AuxBarConfig config) : base("umbra.auxbar.xml")
@@ -47,6 +49,8 @@ public class AuxBarNode : UdtNode
             : new(_width, Toolbar.Height);
 
         // 縦横切り替えや幅変更があった場合のみウィジェットの AutoSize を更新する
+        //      EN/英訳: 
+        //      Update the widget's `AutoSize` only when the orientation changes or the width is adjusted
         if (!_layoutDirty) return;
         _layoutDirty = false;
 
